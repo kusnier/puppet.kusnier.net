@@ -13,6 +13,14 @@ class system::users {
     groups     => ['adm', 'admin'],
   }
 
+  cron { 'mxc-startpage':
+    ensure  => present,
+    require => User['seek'],
+    user    => seek,
+    command => '/home/seek/scripts/pid_mxc_node.sh',
+    minute  => '*/1',
+  }
+
   cron { 'mxc-redirects':
     ensure  => present,
     require => User['seek'],
