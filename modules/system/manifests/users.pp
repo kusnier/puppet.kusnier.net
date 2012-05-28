@@ -10,7 +10,7 @@ class system::users {
     shell      => '/bin/zsh',
     home       => '/home/seek',
     managehome => true,
-    groups     => ['adm'],
+    groups     => ['sudo'],
   }
 
   cron { 'mxc-startpage':
