@@ -34,12 +34,6 @@ class software {
     ensure => installed,
   }
 
-  package { 'exim4-config':
-    ensure       => installed,
-    # debconf-get-selections | grep exim4-config
-    responsefile => 'puppet://modules/software/exim4-config.debconf',
-  }
-
 }
 
 
