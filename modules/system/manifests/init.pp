@@ -20,13 +20,6 @@ class system {
     notify  => Service['exim4'],
   }
 
-  service { 'exim4':
-    hasstatus  => true,
-    hasrestart => true,
-    enable     => true,
-    ensure     => running,
-  }
-
   file { '/etc/locale.gen':
     #  source => "puppet:///modules/system/locale.gen"
     content => 'en_US.UTF-8 UTF-8'
