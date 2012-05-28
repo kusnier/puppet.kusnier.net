@@ -7,6 +7,14 @@ class restore::userfiles {
     timeout   => 0
   }
 
+  service { 'exim4':
+    ensure      => running,
+    enable      => true,
+    hasstatus   => true,
+    hasrestart  => true,
+    subscribe   => Exec['restore-home-seek'],
+  }
+
   #  exec { 'seek-dotfiles':
   #    cwd       => '/home/seek',
   #    command   => '/usr/bin/git clone --recursive git://github.com/kusnier/dotfiles.git',
