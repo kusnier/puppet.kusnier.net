@@ -7,7 +7,8 @@ include software::mysql
 include restore::mongo
 include restore::mysql
 include restore::apache
-#include restore::userfiles
+include restore::sshd
+include restore::userfiles
 
 # puppet describe -s user
 # puppet resoruce user
