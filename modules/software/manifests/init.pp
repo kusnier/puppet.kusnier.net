@@ -23,7 +23,7 @@ class software {
     'tcpdump',
     'traceroute',
     'tree',
-    'unrar',
+    'unrar-free',
     'unzip',
     'vim',
     'wget',
