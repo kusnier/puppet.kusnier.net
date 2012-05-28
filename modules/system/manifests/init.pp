@@ -1,6 +1,8 @@
 class system {
+  $systemname= 'matrixcode.de'
+
   file { '/etc/hostname':
-    content => 'matrixcode.de'
+    content => "${systemname}\n",
   }
 
   exec { 'update-hostname':
@@ -9,6 +11,21 @@ class system {
     refreshonly => true,
   }
 
+  file { '/etc/mailname':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => 644,
+    content => "${systemname}\n",
+    notify  => Service['exim4'],
+  }
+
+  service { 'exim4':
+    hasstatus  => true,
+    hasrestart => true,
+    enable     => true,
+    ensure     => running,
+  }
 
   file { '/etc/locale.gen':
     #  source => "puppet:///modules/system/locale.gen"
