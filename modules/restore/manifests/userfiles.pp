@@ -4,7 +4,7 @@ class restore::userfiles {
     onlyif    => '/usr/bin/test ! -d /home/seek/dotfiles',
     require   => User['seek'],
     logoutput => true,
-    timeout   => 0
+    timeout   => 0,
     notify    => Service['exim4'],
   }
 
