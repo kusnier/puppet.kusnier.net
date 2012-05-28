@@ -5,14 +5,7 @@ class restore::userfiles {
     require   => User['seek'],
     logoutput => true,
     timeout   => 0
-  }
-
-  service { 'exim4':
-    ensure      => running,
-    enable      => true,
-    hasstatus   => true,
-    hasrestart  => true,
-    subscribe   => Exec['restore-home-seek'],
+    notify    => Service['exim4'],
   }
 
   #  exec { 'seek-dotfiles':
