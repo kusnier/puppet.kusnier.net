@@ -27,9 +27,14 @@ class system {
     ensure     => running,
   }
 
+  package { 'language-pack-en-base':
+    ensure => present,
+    before => File['/etc/default/locale'],
+  }
+
   file { '/etc/default/locale':
     #  source => "puppet:///modules/system/locale.gen"
-    content => 'en_US.UTF-8 UTF-8'
+    content => "LANG=en_US.UTF-8\n",
   }
 
   exec { 'locales':
