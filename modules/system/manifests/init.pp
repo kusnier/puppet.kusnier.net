@@ -27,7 +27,7 @@ class system {
     ensure     => running,
   }
 
-  file { '/etc/locale.gen':
+  file { '/etc/default/locale':
     #  source => "puppet:///modules/system/locale.gen"
     content => 'en_US.UTF-8 UTF-8'
   }
