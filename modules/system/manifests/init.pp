@@ -35,7 +35,7 @@ class system {
   exec { 'locales':
     cwd         => '/etc',
     command     => '/usr/sbin/dpkg-reconfigure -f noninteractive locales',
-    subscribe   => File['/etc/locale.gen'],
+    subscribe   => File['/etc/default/locale'],
     refreshonly => true,
     logoutput   => true,
   }
