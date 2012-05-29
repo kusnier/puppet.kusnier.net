@@ -21,6 +21,12 @@ class restore::userfiles {
     logoutput => true,
     timeout   => 0,
   }
+  
+  file { '/etc/network/if-up.d/1_fw':
+    ensure    => link,
+    target    => '/root/firewall.conf/eth0fw.sh',
+    subscribe => Exec['restore-home-root'],
+  }
 
   #  exec { 'seek-dotfiles':
   #    cwd       => '/home/seek',
