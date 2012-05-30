@@ -22,7 +22,7 @@ class software::mongo {
 
   exec { "10gen-apt-get-update-after-add":
     command     => "/usr/bin/apt-get update",
-    subscribe   => File['10gen-repo'],
+    subscribe   => File['10gen-deiban-key'],
     refreshonly => true,
   }
 
