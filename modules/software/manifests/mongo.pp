@@ -14,7 +14,7 @@ class software::mongo {
     content => $mongorepo,
   }
 
-  exec { '10gen-deiban-key':
+  exec { '10gen-debian-key':
     command     => '/usr/bin/apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10',
     subscribe   => File['10gen-repo'],
     refreshonly => true,
@@ -22,7 +22,7 @@ class software::mongo {
 
   exec { "10gen-apt-get-update-after-add":
     command     => "/usr/bin/apt-get update",
-    subscribe   => File['10gen-deiban-key'],
+    subscribe   => Exec['10gen-debian-key'],
     refreshonly => true,
   }
 
