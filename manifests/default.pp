@@ -4,6 +4,7 @@ include software
 include software::mongo
 include software::nodejs
 include software::mysql
+include software::mosh
 include restore::mongo
 include restore::mysql
 include restore::apache

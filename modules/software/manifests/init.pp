@@ -16,6 +16,7 @@ class software {
     'php5',
     'php5-mysql',
     'phpmyadmin',
+    'python-software-properties',
     'ruby',
     'screen',
     'subversion',

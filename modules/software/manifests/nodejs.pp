@@ -1,8 +1,4 @@
 class software::nodejs {
-  package { 'python-software-properties':
-    ensure => installed,
-  }
-
   exec { 'add-nodejs-repo':
     command     => '/usr/bin/apt-add-repository ppa:chris-lea/node.js',
     creates     => '/etc/apt/sources.list.d/chris-lea-node.js-lucid.list',
