@@ -3,6 +3,7 @@ class software {
     'apache2',
     'colordiff',
     'curl',
+    'exim4',
     'exuberant-ctags',
     'git-core',
     'htop',
