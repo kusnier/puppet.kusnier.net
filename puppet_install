@@ -1,0 +1,5 @@
+#!/bin/sh
+wget http://apt.puppetlabs.com/puppetlabs-release_1.0-3_all.deb
+sudo dpkg -i puppetlabs-release_1.0-3_all.deb
+sudo apt-get install puppet-common
+echo "run: puppet apply --modulepath=modules manifests/default.pp"
