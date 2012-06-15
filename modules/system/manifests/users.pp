@@ -28,7 +28,7 @@ class system::users {
     command => 'cd /home/seek/public_subdomains/mxc_startpage; nodeunit --config test/nodeunit.json  test',
     hour    => ['9'],
     minute  => '30',
-    #environment => 'SK_EVN="test"'
+    environment => 'NODE_PATH=/usr/lib/node_modules'
   }
 
   # Root crontabs
