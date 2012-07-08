@@ -11,6 +11,7 @@ class software {
     'lsof',
     'lynx',
     'mercurial',
+    'moreutils',
     'ncftp',
     'netcat',
     'nmap',
