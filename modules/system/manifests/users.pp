@@ -25,7 +25,7 @@ class system::users {
     ensure  => present,
     require => User['seek'],
     user    => seek,
-    command => 'cd /home/seek/public_subdomains/mxc_startpage; nodeunit --config test/nodeunit.json  test',
+    command => 'cd /home/seek/public_subdomains/mxc_startpage; mocha --reporter tap',
     hour    => ['9'],
     minute  => '30',
     environment => 'NODE_PATH=/usr/lib/node_modules'
