@@ -1,5 +1,5 @@
 class system {
-  $systemname= 'kusnier.net'
+  $systemname= 'server.kusnier.net'
 
   file { '/etc/hostname':
     content => "${systemname}\n",
