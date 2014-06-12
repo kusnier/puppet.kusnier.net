@@ -14,7 +14,7 @@ class system::users {
   }
 
   cron { 'mxc-startpage':
-    ensure  => present,
+    ensure  => absent,
     require => User['seek'],
     user    => seek,
     command => '/home/seek/scripts/pid_mxc_node.sh',
@@ -22,7 +22,7 @@ class system::users {
   }
 
   cron { 'mxc-redirects':
-    ensure  => present,
+    ensure  => absent,
     require => User['seek'],
     user    => seek,
     command => 'cd /home/seek/public_subdomains/mxc_startpage; mocha --reporter tap',
