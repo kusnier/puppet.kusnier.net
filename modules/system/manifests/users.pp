@@ -33,7 +33,7 @@ class system::users {
 
   # Root crontabs
   cron { 'backup':
-    ensure  => present,
+    ensure  => absent,
     user    => 'root',
     command => '/private-backup/backup_server.sh',
     hour    => '1',
