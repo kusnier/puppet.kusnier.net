@@ -1,6 +1,7 @@
 class software {
   $syspackages= [
     'apache2',
+    'dnsutils',
     'colordiff',
     'curl',
     'exim4',
