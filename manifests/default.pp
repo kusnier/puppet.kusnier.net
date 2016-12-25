@@ -2,10 +2,8 @@ include system
 include system::users
 include software
 include software::mongo
-include software::mysql
 include software::mosh
 include restore::mongo
-include restore::mysql
 include restore::apache
 include restore::sshd
 include restore::userfiles
