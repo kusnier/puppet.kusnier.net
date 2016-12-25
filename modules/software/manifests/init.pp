@@ -15,7 +15,7 @@ class software {
     'ncftp',
     'netcat',
     'nmap',
-    'postgresql'
+    'postgresql',
     'python-software-properties',
     'ruby',
     'screen',
