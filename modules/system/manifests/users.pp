@@ -36,7 +36,7 @@ class system::users {
     ensure  => present,
     user    => 'root',
     command => '/private-backup/backup_server.sh',
-    hour    => '1',
+    hour    => '3',
     minute  => '1',
   }
 
