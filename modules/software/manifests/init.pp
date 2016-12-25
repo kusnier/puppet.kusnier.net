@@ -37,6 +37,17 @@ class software {
   package { $syspackages:
     ensure => installed,
   }
+
+  $delpackages= [
+    'libapache2-mod-php5',
+    'php5',
+    'php5-mysql',
+    'phpmyadmin',
+  ]
+
+  package { $syspackages:
+    ensure => purged,
+  }
 }
 
 
