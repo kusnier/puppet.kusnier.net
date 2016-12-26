@@ -20,7 +20,6 @@ class software {
     'ruby',
     'screen',
     'subversion',
-    'svnmailer',
     'tcpdump',
     'traceroute',
     'tree',

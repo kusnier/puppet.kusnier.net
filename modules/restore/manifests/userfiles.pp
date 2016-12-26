@@ -8,13 +8,6 @@ class restore::userfiles {
     notify    => Service['exim4'],
   }
 
-  exec { 'restore-home-svn':
-    command   => '/usr/bin/rsync --archive -v --delete /private-backup/backups/home/svn /home',
-    onlyif    => '/usr/bin/test ! -d /home/svn',
-    logoutput => true,
-    timeout   => 0,
-  }
-
   exec { 'restore-home-root':
     command   => '/usr/bin/rsync --archive -v --delete /private-backup/backups/root/. /root',
     onlyif    => '/usr/bin/test ! -d /root/devel',
