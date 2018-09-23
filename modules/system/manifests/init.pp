@@ -34,7 +34,7 @@ class system {
 
   file { '/etc/default/locale':
     #  source => "puppet:///modules/system/locale.gen"
-    content => "LANG=en_US.UTF-8\n",
+    content => "LANG=en_US.UTF-8\nLC_ALL=en_US.UTF-8\n",
   }
 
   exec { 'locales':

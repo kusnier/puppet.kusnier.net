@@ -15,6 +15,7 @@ class restore::apache {
     recurse => true,
   }
 
+  /*
   file { '/etc/apache2/apache.pem':
     ensure  => present,
     source  => '/private-backup/backups/etc/apache2/apache.pem',
@@ -22,6 +23,7 @@ class restore::apache {
     group   => 'root',
     recurse => true,
   }
+  */
 
   file { '/etc/apache2/sites-enabled':
     ensure  => directory,
@@ -35,6 +37,7 @@ class restore::apache {
       hasstatus => true,
       enable    => true,
       ensure    => running,
-      subscribe => [File['/etc/apache2/sites-enabled'], File['/etc/apache2/mods-enabled'], File['/etc/apache2/apache.pem']]
+      /*subscribe => [File['/etc/apache2/sites-enabled'], File['/etc/apache2/mods-enabled'], File['/etc/apache2/apache.pem']]*/
+      subscribe => [File['/etc/apache2/sites-enabled'], File['/etc/apache2/mods-enabled']]
   }
 }

@@ -7,17 +7,17 @@ class system::users {
     ensure     => present,
     require    => Group['seek'],
     gid        => 'seek',
-    shell      => '/bin/zsh',
+    shell      => '/usr/bin/fish',
     home       => '/home/seek',
     managehome => true,
     groups     => ['sudo'],
   }
 
   cron { 'mxc-startpage':
-    ensure  => absent,
+    ensure  => present,
     require => User['seek'],
     user    => seek,
-    command => '/home/seek/scripts/pid_mxc_node.sh',
+    command => '/home/seek/cron_check_wildfly.sh',
     minute  => '*/1',
   }
 
